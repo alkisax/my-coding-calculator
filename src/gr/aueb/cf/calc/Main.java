@@ -24,6 +24,11 @@ public class Main {
     }
 
     public static int mod(int a, int b){
-        return a % b;
+        try {
+            return a % b;
+        } catch (ArithmeticException e) {
+            System.err.println("Error. denominator must not be zero");
+            throw e;
+        }
     }
 }
